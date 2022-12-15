@@ -60,7 +60,7 @@ class WordClassification(unittest.TestCase):
         try:
             correct=[0.89370104, 0.89678673, 0.89758288, 0.89685042, 0.89643642]
             for a, b in zip(correct, v):
-                self.assertAlmostEqual(a, b, msg="Incorrect accuracy score returned by word_classification!")
+                self.assertAlmostEqual(a, b, places = 3, msg="Incorrect accuracy score returned by word_classification!")
         except AssertionError:
             good=False
 
@@ -69,7 +69,7 @@ class WordClassification(unittest.TestCase):
             # Result of non-shuffled cross validation
             correct=[0.86833706, 0.96897443, 0.842957,   0.87366338, 0.88320352]
             for a, b in zip(correct, v):
-                self.assertAlmostEqual(a, b, msg="Incorrect accuracy score returned by word_classification!")
+                self.assertAlmostEqual(a, b,  places = 3, msg="Incorrect accuracy score returned by word_classification!")
 
     @points('p06-03.4')
     def test_word_classification_calls(self):
